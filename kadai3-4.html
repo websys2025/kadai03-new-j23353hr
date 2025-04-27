@@ -47,6 +47,16 @@
                     return; // 処理をここで終了
                 }
 
+                const item = items[no - 1];  //item.idとnoをそろえるため
+
+                console.log("商品番号: " + item.id + ", 商品名: " + item.name + "を購入します。");
+
+                if (item.stock > 0) {  // 在庫がある場合
+                    item.stock--;      // 在庫を1減らす
+                } else {               // 在庫がない場合
+                    console.log("在庫がありません。");
+                }
+
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
