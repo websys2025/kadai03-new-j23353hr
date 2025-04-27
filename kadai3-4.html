@@ -40,6 +40,13 @@
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
+
+                // 番号が範囲内かチェック
+                if (no < 1 || no > items.length) {
+                    console.log(no + "は無効な商品番号です。番号は1～" + items.length + "で指定してください。");
+                    return; // 処理をここで終了
+                }
+
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
